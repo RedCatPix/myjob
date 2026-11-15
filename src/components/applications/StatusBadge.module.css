@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.badge[data-status='applied'] {
+  background-color: var(--status-applied-bg);
+  color: var(--status-applied-fg);
+}
+
+.badge[data-status='viewed'] {
+  background-color: var(--status-viewed-bg);
+  color: var(--status-viewed-fg);
+}
+
+.badge[data-status='interview'] {
+  background-color: var(--status-interview-bg);
+  color: var(--status-interview-fg);
+}
+
+.badge[data-status='offer'] {
+  background-color: var(--status-offer-bg);
+  color: var(--status-offer-fg);
+}
+
+.badge[data-status='rejected'] {
+  background-color: var(--status-rejected-bg);
+  color: var(--status-rejected-fg);
+}
+
+.badge[data-status='withdrawn'] {
+  background-color: var(--status-withdrawn-bg);
+  color: var(--status-withdrawn-fg);
+}
