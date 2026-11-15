@@ -4,6 +4,19 @@ import type {
   EmploymentType,
   WorkFormat,
 } from '../types/application.ts'
+import type { InterviewFormat } from '../types/interview.ts'
+
+export const CURRENCY_LABELS: Record<Currency, string> = {
+  RUB: 'RUB – рубль',
+  USD: 'USD – доллар США',
+  EUR: 'EUR – евро',
+}
+
+export const INTERVIEW_FORMAT_LABELS: Record<InterviewFormat, string> = {
+  online: 'Онлайн',
+  offline: 'Очно',
+  phone: 'По телефону',
+}
 
 export const STATUS_LABELS: Record<ApplicationStatus, string> = {
   applied: 'Отклик отправлен',

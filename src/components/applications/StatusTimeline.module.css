@@ -1,0 +1,88 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  --dot-color: var(--status-withdrawn-fg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 0 0 var(--space-5) var(--space-5);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--dot-color);
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: -6px;
+  left: 4px;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.item:last-child::after {
+  display: none;
+}
+
+.item[data-status='applied'] {
+  --dot-color: var(--status-applied-fg);
+}
+
+.item[data-status='viewed'] {
+  --dot-color: var(--status-viewed-fg);
+}
+
+.item[data-status='interview'] {
+  --dot-color: var(--status-interview-fg);
+}
+
+.item[data-status='offer'] {
+  --dot-color: var(--status-offer-fg);
+}
+
+.item[data-status='rejected'] {
+  --dot-color: var(--status-rejected-fg);
+}
+
+.change {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.arrow {
+  color: var(--color-text-muted);
+}
+
+.date {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.comment {
+  font-size: 15px;
+}

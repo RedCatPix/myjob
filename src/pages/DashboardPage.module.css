@@ -1,5 +1,5 @@
 .hero {
-  margin: var(--space-5) 0 var(--space-6);
+  margin: 0 0 var(--space-6);
   padding: var(--space-6) var(--space-5);
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--color-bg-accent), var(--color-bg));
@@ -27,8 +27,23 @@
   color: var(--color-text-muted);
 }
 
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
 .section {
   margin-bottom: var(--space-7);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .sectionTitle {
@@ -37,10 +52,31 @@
   font-weight: 700;
 }
 
+.sectionHeader .sectionTitle {
+  margin-bottom: 0;
+}
+
+.allLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color var(--transition);
+}
+
+.allLink:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .hero {
-    margin-top: var(--space-6);
-    padding: var(--space-7) var(--space-7);
+    padding: var(--space-7);
   }
 
   .title {

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { getApplicationPath } from '../../app/paths.ts'
 import type { Category, JobApplication } from '../../types/application.ts'
 import {
   EMPLOYMENT_TYPE_LABELS,
@@ -15,6 +17,7 @@ interface ApplicationCardProps {
 
 function ApplicationCard({ application, category }: ApplicationCardProps) {
   const {
+    id,
     company,
     position,
     status,
@@ -31,7 +34,11 @@ function ApplicationCard({ application, category }: ApplicationCardProps) {
     <article className={styles.card} data-status={status}>
       <header className={styles.header}>
         <div className={styles.titles}>
-          <h3 className={styles.company}>{company}</h3>
+          <h3 className={styles.company}>
+            <Link to={getApplicationPath(id)} className={styles.link}>
+              {company}
+            </Link>
+          </h3>
           <p className={styles.position}>{position}</p>
         </div>
         <StatusBadge status={status} />

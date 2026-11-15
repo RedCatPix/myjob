@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.button:active {
+  transform: scale(0.94);
+}
+
+.button[aria-pressed='true'] {
+  color: var(--color-accent);
+}

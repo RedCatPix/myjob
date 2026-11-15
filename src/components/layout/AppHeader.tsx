@@ -1,4 +1,8 @@
+import { Plus } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../../app/paths.ts'
 import type { Theme } from '../../hooks/useTheme.ts'
+import Brand from './Brand.tsx'
 import ThemeToggle from './ThemeToggle.tsx'
 import styles from './AppHeader.module.css'
 
@@ -7,40 +11,21 @@ interface AppHeaderProps {
   onToggleTheme: () => void
 }
 
-interface NavLinkItem {
-  href: string
-  label: string
-}
-
-const NAV_LINKS: readonly NavLinkItem[] = [
-  { href: '#summary', label: 'Сводка' },
-  { href: '#recent', label: 'Последние отклики' },
-]
-
+/** Верхняя строка мобильной версии: название приложения, добавление отклика и переключатель темы. */
 function AppHeader({ theme, onToggleTheme }: AppHeaderProps) {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <span className={styles.brand}>
-          <span className={styles.logo} aria-hidden="true">
-            MJ
-          </span>
-          <span className={styles.name}>MyJob</span>
-        </span>
+        <Link to={ROUTES.dashboard} className={styles.brandLink} aria-label="MyJob – на главную">
+          <Brand />
+        </Link>
 
-        <nav className={styles.nav} aria-label="Разделы страницы">
-          <ul className={styles.links}>
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a className={styles.link} href={link.href}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+        <div className={styles.actions}>
+          <Link to={ROUTES.applicationNew} className={styles.addButton} aria-label="Добавить отклик" title="Добавить отклик">
+            <Plus size={20} aria-hidden="true" />
+          </Link>
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+        </div>
       </div>
     </header>
   )
