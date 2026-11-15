@@ -21,6 +21,8 @@
 
   /* Размеры */
   --header-height: 64px;
+  --mobile-nav-height: 64px;
+  --sidebar-width: 248px;
   --container-width: 1120px;
 
   /* Анимации */

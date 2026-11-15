@@ -42,6 +42,21 @@ export interface JobApplication {
   isArchived: boolean
 }
 
+/** Поля отклика, достаточные для строки в списке. */
+export type ApplicationListItem = Pick<
+  JobApplication,
+  | 'id'
+  | 'company'
+  | 'position'
+  | 'categoryId'
+  | 'status'
+  | 'salary'
+  | 'salaryMax'
+  | 'currency'
+  | 'appliedAt'
+  | 'isFavorite'
+>
+
 export interface Category {
   id: string
   name: string

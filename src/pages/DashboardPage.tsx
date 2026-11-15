@@ -1,6 +1,10 @@
+import { ArrowRight, Plus } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../app/paths.ts'
 import ApplicationList from '../components/applications/ApplicationList.tsx'
 import StatsSummary from '../components/dashboard/StatsSummary.tsx'
+import ButtonLink from '../components/ui/ButtonLink.tsx'
 import ErrorMessage from '../components/ui/ErrorMessage.tsx'
 import LoadingIndicator from '../components/ui/LoadingIndicator.tsx'
 import { getDashboardData } from '../services/applicationsService.ts'
@@ -48,7 +52,7 @@ function DashboardPage() {
   }
 
   return (
-    <div className="container">
+    <div>
       <section className={styles.hero} aria-labelledby="page-title">
         <p className={styles.eyebrow}>Трекер поиска работы</p>
         <h1 id="page-title" className={styles.title}>
@@ -58,6 +62,11 @@ function DashboardPage() {
           MyJob помогает вести отклики на вакансии: видеть, куда и когда вы откликнулись, на каком
           этапе находится каждый процесс и какие собеседования и предложения уже есть.
         </p>
+        <div className={styles.heroActions}>
+          <ButtonLink to={ROUTES.applicationNew} icon={<Plus size={18} aria-hidden="true" />}>
+            Добавить отклик
+          </ButtonLink>
+        </div>
       </section>
 
       <section id="summary" className={styles.section} aria-labelledby="summary-title">
@@ -82,9 +91,15 @@ function DashboardPage() {
 
       {state.status === 'success' ? (
         <section id="recent" className={styles.section} aria-labelledby="recent-title">
-          <h2 id="recent-title" className={styles.sectionTitle}>
-            Последние отклики
-          </h2>
+          <div className={styles.sectionHeader}>
+            <h2 id="recent-title" className={styles.sectionTitle}>
+              Последние отклики
+            </h2>
+            <Link to={ROUTES.applications} className={styles.allLink}>
+              Все отклики
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
           <ApplicationList
             applications={getRecentApplications(state.data.applications, RECENT_LIMIT)}
             categories={state.data.categories}
