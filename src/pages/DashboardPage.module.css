@@ -1,0 +1,53 @@
+.hero {
+  margin: var(--space-5) 0 var(--space-6);
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-bg-accent), var(--color-bg));
+  border: 1px solid var(--color-border);
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  margin-top: var(--space-2);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.description {
+  max-width: 640px;
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.section {
+  margin-bottom: var(--space-7);
+}
+
+.sectionTitle {
+  margin-bottom: var(--space-4);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    margin-top: var(--space-6);
+    padding: var(--space-7) var(--space-7);
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+}

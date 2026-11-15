@@ -1,0 +1,97 @@
+:root {
+  /* Типографика */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+
+  /* Скругления */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* Размеры */
+  --header-height: 64px;
+  --container-width: 1120px;
+
+  /* Анимации */
+  --transition: 160ms ease;
+
+  /* Светлая тема (по умолчанию) */
+  --color-bg: #f6f7fb;
+  --color-bg-accent: #eceeff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #fafbff;
+  --color-text: #161827;
+  --color-text-muted: #5a6078;
+  --color-border: #e2e5ef;
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+  --color-accent-soft: #eef0ff;
+  --color-accent-contrast: #ffffff;
+  --color-focus: #4f46e5;
+  --color-danger: #b42323;
+  --color-danger-soft: #fde8e8;
+
+  --shadow-sm: 0 1px 2px rgb(22 24 39 / 6%);
+  --shadow-md: 0 8px 24px rgb(22 24 39 / 8%);
+
+  --status-applied-bg: #e8efff;
+  --status-applied-fg: #2650c7;
+  --status-viewed-bg: #e0f5fb;
+  --status-viewed-fg: #0b6f8c;
+  --status-interview-bg: #efe8ff;
+  --status-interview-fg: #6a3bc4;
+  --status-offer-bg: #e1f6e8;
+  --status-offer-fg: #1b7a3d;
+  --status-rejected-bg: #fde8e8;
+  --status-rejected-fg: #b42323;
+  --status-withdrawn-bg: #eceef3;
+  --status-withdrawn-fg: #566074;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #0f1119;
+  --color-bg-accent: #181b2e;
+  --color-surface: #171a26;
+  --color-surface-hover: #1c2030;
+  --color-text: #eceef8;
+  --color-text-muted: #9aa1bb;
+  --color-border: #2a2f42;
+  --color-accent: #818cf8;
+  --color-accent-hover: #9aa3fb;
+  --color-accent-soft: #232846;
+  --color-accent-contrast: #0f1119;
+  --color-focus: #a5b0ff;
+  --color-danger: #ff8f8f;
+  --color-danger-soft: #3d1a1d;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 35%);
+
+  --status-applied-bg: #1c2a4d;
+  --status-applied-fg: #8fb0ff;
+  --status-viewed-bg: #12323d;
+  --status-viewed-fg: #6fd3ee;
+  --status-interview-bg: #2b2150;
+  --status-interview-fg: #b79bff;
+  --status-offer-bg: #123222;
+  --status-offer-fg: #6fdc97;
+  --status-rejected-bg: #3d1a1d;
+  --status-rejected-fg: #ff8f8f;
+  --status-withdrawn-bg: #262b38;
+  --status-withdrawn-fg: #a6aec2;
+
+  color-scheme: dark;
+}

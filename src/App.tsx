@@ -1,18 +1,17 @@
+import AppHeader from './components/layout/AppHeader.tsx'
+import { useTheme } from './hooks/useTheme.ts'
+import DashboardPage from './pages/DashboardPage.tsx'
+
 function App() {
+  const { theme, toggleTheme } = useTheme()
+
   return (
-    <main className="start">
-      <div className="start__badge" aria-hidden="true">
-        MJ
-      </div>
-      <h1 className="start__title">MyJob</h1>
-      <p className="start__subtitle">Трекер поиска работы</p>
-      <p className="start__text">
-        Персональное приложение для учёта откликов на вакансии, этапов отбора,
-        собеседований, предложений и отказов. Проект находится на стадии
-        проектирования: описание приложения собрано в файле{' '}
-        <code>docs/project-spec.md</code>.
-      </p>
-    </main>
+    <>
+      <AppHeader theme={theme} onToggleTheme={toggleTheme} />
+      <main>
+        <DashboardPage />
+      </main>
+    </>
   )
 }
 
